@@ -1,11 +1,6 @@
 'use strict';
 
-/* Controllers */
+var f1StatsControllers = angular.module('f1Stats.controllers', []);
 
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
-
-  }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
-
-  }]);
+f1StatsControllers.controller('', ['$scope', function($scope) {
+}]);
