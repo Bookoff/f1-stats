@@ -8,13 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <section data-ng-controller="driversAll">
-        <h1>All Drivers</h1>
-        <div data-ng-show="drivers" data-ng-repeat="driver in drivers">
-            <h2>{{driver.givenName}} {{driver.familyName}}</h2>
-            <time datetime="{{driver.dateOfBirth}}">{{driver.dateOfBirth}}</time>
-            <span>{{driver.nationality}}</span>
-            <a href="{{driver.url}}">biography</a>
+    <section>
+        <header>
+            <h1>Titles by Nationality</h1>
+        </header>
+        <h2>Drivers</h2>
+        <div data-ng-controller="getDriversChampions">
+            <div data-ng-repeat="nation in driversChampions|orderBy: '-titles'">
+                <dl>
+                    <dt>Nationality:</dt>
+                    <dd>{{nation.nationality}}</dd>
+                    <dt>Titles:</dt>
+                    <dd>{{nation.titles}}</dd>
+                </dl>
+            </div>
+        </div>
+        <h2>Constructors</h2>
+        <div data-ng-controller="getConstructorsChampions">
+            <div data-ng-repeat="nation in constructorsChampions|orderBy: '-titles'">
+                <dl>
+                    <dt>Nationality:</dt>
+                    <dd>{{nation.nationality}}</dd>
+                    <dt>Titles:</dt>
+                    <dd>{{nation.titles}}</dd>
+                </dl>
+            </div>
         </div>
     </section>
     <script src="bower_components/angular/angular.js"></script>
