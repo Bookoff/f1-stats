@@ -15,7 +15,6 @@ f1StatsControllers.controller('getDriversChampions', ['$scope', 'driversChampion
 
             var talliedDrivers = sortArray.tally($scope.drivers);
             $scope.driversChampions = buildArray.nation(talliedDrivers);
-
         });
 }]);
 
